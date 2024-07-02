@@ -1,0 +1,28 @@
+version: "3.8"
+
+services:
+  db-clientes:
+    image: postgres:16.2
+    container_name: "containerBancoDeDadosClientes"
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: root
+    volumes:
+      - ./scriptBancoDeDados:/docker-entrypoint-initdb.d
+    ports:
+      - "5436:5432"
+    restart: always
+  app-clientes:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    container_name: app-sistema-cliente
+    environment:
+      POSTGRES_HOST: db-clientes:5432
+    ports:
+      - "8083:8083"
+    depends_on:
+      - db-clientes
+    restart: always
