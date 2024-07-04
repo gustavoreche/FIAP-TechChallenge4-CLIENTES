@@ -42,6 +42,6 @@ microsserviços.
 
 #### Que esse microsserviço fornece:
 
-- A aplicação fornece dia HTTP informações de clientes, para os microsserviços de LOGÍSTICA e PEDIDO.
+- A aplicação fornece via HTTP informações de clientes, para os microsserviços de LOGÍSTICA e PEDIDO.
 
 ![img.png](integracao_fornece.png)
