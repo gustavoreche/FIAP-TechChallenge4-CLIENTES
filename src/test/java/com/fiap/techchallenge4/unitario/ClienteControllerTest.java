@@ -37,7 +37,7 @@ public class ClienteControllerTest {
         var controller = new ClienteController(service);
 
         // execução
-        var produto = controller.cadastra(
+        var cliente = controller.cadastra(
                 new CriaClienteDTO(
                         "92084815061",
                         "Nome de Teste",
@@ -48,7 +48,7 @@ public class ClienteControllerTest {
         );
 
         // avaliação
-        Assertions.assertEquals(HttpStatus.CREATED, produto.getStatusCode());
+        Assertions.assertEquals(HttpStatus.CREATED, cliente.getStatusCode());
     }
 
     @Test
@@ -66,7 +66,7 @@ public class ClienteControllerTest {
         var controller = new ClienteController(service);
 
         // execução
-        var produto = controller.cadastra(
+        var cliente = controller.cadastra(
                 new CriaClienteDTO(
                         "92084815061",
                         "Nome de Teste",
@@ -77,7 +77,7 @@ public class ClienteControllerTest {
         );
 
         // avaliação
-        Assertions.assertEquals(HttpStatus.CONFLICT, produto.getStatusCode());
+        Assertions.assertEquals(HttpStatus.CONFLICT, cliente.getStatusCode());
     }
 
     @Test
@@ -96,7 +96,7 @@ public class ClienteControllerTest {
         var controller = new ClienteController(service);
 
         // execução
-        var produto = controller.atualiza(
+        var cliente = controller.atualiza(
                 "92084815061",
                 new AtualizaClienteDTO(
                         "Nome de Teste",
@@ -107,7 +107,7 @@ public class ClienteControllerTest {
         );
 
         // avaliação
-        Assertions.assertEquals(HttpStatus.OK, produto.getStatusCode());
+        Assertions.assertEquals(HttpStatus.OK, cliente.getStatusCode());
     }
 
     @Test
@@ -126,7 +126,7 @@ public class ClienteControllerTest {
         var controller = new ClienteController(service);
 
         // execução
-        var produto = controller.atualiza(
+        var cliente = controller.atualiza(
                 "92084815061",
                 new AtualizaClienteDTO(
                         "Nome de Teste",
@@ -137,7 +137,7 @@ public class ClienteControllerTest {
         );
 
         // avaliação
-        Assertions.assertEquals(HttpStatus.NO_CONTENT, produto.getStatusCode());
+        Assertions.assertEquals(HttpStatus.NO_CONTENT, cliente.getStatusCode());
     }
 
     @Test
@@ -155,12 +155,12 @@ public class ClienteControllerTest {
         var controller = new ClienteController(service);
 
         // execução
-        var produto = controller.deleta(
+        var cliente = controller.deleta(
                 "92084815061"
         );
 
         // avaliação
-        Assertions.assertEquals(HttpStatus.OK, produto.getStatusCode());
+        Assertions.assertEquals(HttpStatus.OK, cliente.getStatusCode());
     }
 
     @Test
@@ -178,12 +178,12 @@ public class ClienteControllerTest {
         var controller = new ClienteController(service);
 
         // execução
-        var produto = controller.deleta(
+        var cliente = controller.deleta(
                 "92084815061"
         );
 
         // avaliação
-        Assertions.assertEquals(HttpStatus.NO_CONTENT, produto.getStatusCode());
+        Assertions.assertEquals(HttpStatus.NO_CONTENT, cliente.getStatusCode());
     }
 
     @Test
@@ -208,12 +208,12 @@ public class ClienteControllerTest {
         var controller = new ClienteController(service);
 
         // execução
-        var produto = controller.busca(
+        var cliente = controller.busca(
                 "92084815061"
         );
 
         // avaliação
-        Assertions.assertEquals(HttpStatus.OK, produto.getStatusCode());
+        Assertions.assertEquals(HttpStatus.OK, cliente.getStatusCode());
     }
 
     @Test
@@ -231,12 +231,12 @@ public class ClienteControllerTest {
         var controller = new ClienteController(service);
 
         // execução
-        var produto = controller.busca(
+        var cliente = controller.busca(
                 "92084815061"
         );
 
         // avaliação
-        Assertions.assertEquals(HttpStatus.NO_CONTENT, produto.getStatusCode());
+        Assertions.assertEquals(HttpStatus.NO_CONTENT, cliente.getStatusCode());
     }
 
     @ParameterizedTest

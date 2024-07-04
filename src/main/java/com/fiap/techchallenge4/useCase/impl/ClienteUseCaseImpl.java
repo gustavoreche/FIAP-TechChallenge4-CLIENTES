@@ -99,12 +99,12 @@ public class ClienteUseCaseImpl implements ClienteUseCase {
     public ClienteDTO busca(final String cpf) {
         final var cpfObjeto = new Cpf(cpf);
 
-        final var produtoNaBase = this.repository.findById(cpfObjeto.getNumero());
-        if(produtoNaBase.isEmpty()) {
+        final var clienteNaBase = this.repository.findById(cpfObjeto.getNumero());
+        if(clienteNaBase.isEmpty()) {
             System.out.println("Cliente não está cadastrado");
             return null;
         }
-        final var clienteEntity = produtoNaBase.get();
+        final var clienteEntity = clienteNaBase.get();
 
         return new ClienteDTO(
                 clienteEntity.getCpf(),

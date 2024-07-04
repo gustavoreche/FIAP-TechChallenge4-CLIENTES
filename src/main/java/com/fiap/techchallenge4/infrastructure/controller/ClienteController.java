@@ -86,11 +86,11 @@ public class ClienteController {
 	)
 	@GetMapping("/{cpf}")
 	public ResponseEntity<ClienteDTO> busca(@PathVariable("cpf") final String cpf) {
-		final var produto = this.service.busca(cpf);
-		if(Objects.nonNull(produto)) {
+		final var cliente = this.service.busca(cpf);
+		if(Objects.nonNull(cliente)) {
 			return ResponseEntity
 					.status(HttpStatus.OK)
-					.body(produto);
+					.body(cliente);
 		}
 		return ResponseEntity
 				.status(HttpStatus.NO_CONTENT)
