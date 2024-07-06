@@ -21,6 +21,7 @@ services:
     container_name: app-sistema-cliente
     environment:
       POSTGRES_HOST: db-clientes:5432
+      RABBITMQ_HOST: 172.17.0.1
     ports:
       - "8083:8083"
     depends_on:
